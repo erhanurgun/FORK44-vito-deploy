@@ -18,7 +18,7 @@ class UserController extends Controller
 {
     public function index(): View
     {
-        $users = User::query()->paginate(20);
+        $users = User::query()->sort(request())->paginate(20);
 
         return view('settings.users.index', compact('users'));
     }

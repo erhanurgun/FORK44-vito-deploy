@@ -25,7 +25,7 @@ class ScriptController extends Controller
         $user = auth()->user();
 
         $data = [
-            'scripts' => $user->scripts,
+            'scripts' => $user->scripts()->sort(request())->get(),
         ];
 
         if ($request->has('edit')) {

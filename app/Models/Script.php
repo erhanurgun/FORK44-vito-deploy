@@ -63,4 +63,12 @@ class Script extends AbstractModel
     {
         return $this->hasOne(ScriptExecution::class)->latest();
     }
+
+    public function scopeSort($query, $request): void
+    {
+        $sort = $request->query('sort', 'name');
+        $direction = $request->query('direction', 'asc');
+
+        $query->orderBy($sort, $direction);
+    }
 }

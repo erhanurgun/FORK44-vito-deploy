@@ -302,4 +302,12 @@ class Site extends AbstractModel
             'PHP_PATH' => '/usr/bin/php'.$this->php_version,
         ];
     }
+
+    public function scopeSort($query, $request): void
+    {
+        $sort = $request->query('sort', 'domain');
+        $direction = $request->query('direction', 'asc');
+
+        $query->orderBy($sort, $direction);
+    }
 }

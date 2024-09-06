@@ -404,4 +404,12 @@ class Server extends AbstractModel
         $this->last_update_check = now();
         $this->save();
     }
+
+    public function scopeSort($query, $request): void
+    {
+        $sort = $request->query('sort', 'name');
+        $direction = $request->query('direction', 'asc');
+
+        $query->orderBy($sort, $direction);
+    }
 }

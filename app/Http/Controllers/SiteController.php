@@ -23,7 +23,7 @@ class SiteController extends Controller
 
         return view('sites.index', [
             'server' => $server,
-            'sites' => $server->sites()->orderByDesc('id')->get(),
+            'sites' => $server->sites()->sort(request())->orderBy('domain')->get(),
         ]);
     }
 
