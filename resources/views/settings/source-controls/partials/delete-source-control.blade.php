@@ -3,7 +3,7 @@
         @csrf
         @method("delete")
 
-        <h2 class="text-lg font-medium">Are you sure that you want to delete this source control?</h2>
+        <h2 class="text-lg font-medium">{{ __('Are you sure that you want to delete this source control?') }}</h2>
 
         <div class="mt-6 flex justify-end">
             <x-secondary-button type="button" x-on:click="$dispatch('close')">

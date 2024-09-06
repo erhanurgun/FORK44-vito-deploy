@@ -1,10 +1,10 @@
 <x-card>
-    <x-slot name="title">Projects</x-slot>
+    <x-slot name="title">{{ __('Projects') }}</x-slot>
 
-    <x-slot name="description">Manage the projects that the user is in</x-slot>
+    <x-slot name="description">{{ __('Manage the projects that the user is in') }}</x-slot>
 
     <x-slot name="aside">
-        <x-secondary-button :href="route('settings.users.index')">Back to Users</x-secondary-button>
+        <x-secondary-button :href="route('settings.users.index')">{{ __('Back to Users') }}</x-secondary-button>
     </x-slot>
 
     <form
@@ -71,7 +71,7 @@
             </div>
 
             <div>
-                <x-input-label value="Add new Project" />
+                <x-input-label value="{{ __('Add new Project') }}" />
 
                 @php
                     $projects = \App\Models\Project::query()
@@ -92,7 +92,7 @@
                             x-model="q"
                             type="text"
                             class="mt-1 w-full"
-                            placeholder="Search for projects..."
+                            placeholder="{{ __('Search for projects...') }}"
                             autocomplete="off"
                             x-on:input.debounce.500ms="search"
                         />
@@ -115,6 +115,6 @@
     </form>
 
     <x-slot name="actions">
-        <x-primary-button id="btn-save-projects" form="update-projects">Save</x-primary-button>
+        <x-primary-button id="btn-save-projects" form="update-projects">{{ __('Save') }}</x-primary-button>
     </x-slot>
 </x-card>

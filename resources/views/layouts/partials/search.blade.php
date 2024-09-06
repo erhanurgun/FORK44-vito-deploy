@@ -151,7 +151,7 @@
                     class="w-full"
                     @input="isTyping = true"
                     x-model="searchQuery"
-                    placeholder="Search something..."
+                    placeholder="{{ __('Search something...') }}"
                     @keyup="keyEntered"
                     autocomplete="off"
                 ></x-text-input>
@@ -160,13 +160,13 @@
                     class="list-none divide-y divide-gray-100 rounded-md bg-white py-1 text-base shadow ring-1 ring-black ring-opacity-5 dark:divide-gray-700/50 dark:bg-gray-800"
                 >
                     <div x-show="isLoading" class="w-full px-3 py-2 text-sm text-gray-800 dark:text-gray-300">
-                        Please wait
+                        {{ __('Please wait') }}
                     </div>
                     <div
                         x-show="!isLoading && noResults"
                         class="w-full px-3 py-2 text-sm text-gray-800 dark:text-gray-300"
                     >
-                        No results
+                        {{ __('No results') }}
                     </div>
                     <template x-for="(item, index) in searchResult">
                         <button

@@ -1,7 +1,7 @@
 <x-card>
-    <x-slot name="title">User Info</x-slot>
+    <x-slot name="title">{{ __('User Info') }}</x-slot>
 
-    <x-slot name="description">You can update user's info here</x-slot>
+    <x-slot name="description">{{ __('You can update user\'s info here') }}</x-slot>
 
     <form
         id="update-user-info"
@@ -15,7 +15,7 @@
     >
         @csrf
         <div>
-            <x-input-label for="name" value="Name" />
+            <x-input-label for="name" value="{{ __('Name') }}" />
             <x-text-input
                 id="name"
                 name="name"
@@ -31,7 +31,7 @@
         </div>
 
         <div>
-            <x-input-label for="email" value="Email" />
+            <x-input-label for="email" value="{{ __('Email') }}" />
             <x-text-input
                 id="email"
                 name="email"
@@ -47,7 +47,7 @@
         </div>
 
         <div>
-            <x-input-label for="timezone" value="Timezone" />
+            <x-input-label for="timezone" value="{{ __('Timezone') }}" />
             <x-select-input id="timezone" name="timezone" class="mt-1 block w-full" required>
                 @foreach (timezone_identifiers_list() as $timezone)
                     <option
@@ -64,19 +64,19 @@
         </div>
 
         <div>
-            <x-input-label for="role" value="Role" />
+            <x-input-label for="role" value="{{ __('Role') }}" />
             <x-select-input id="role" name="role" class="mt-1 w-full">
                 <option
                     value="{{ \App\Enums\UserRole::USER }}"
                     @if(old('role', $user->role) === \App\Enums\UserRole::USER) selected @endif
                 >
-                    User
+                    {{ __('User') }}
                 </option>
                 <option
                     value="{{ \App\Enums\UserRole::ADMIN }}"
                     @if(old('role', $user->role) === \App\Enums\UserRole::ADMIN) selected @endif
                 >
-                    Admin
+                    {{ __('Admin') }}
                 </option>
             </x-select-input>
             @error("role")
@@ -85,7 +85,7 @@
         </div>
 
         <div>
-            <x-input-label for="password" value="New Password" />
+            <x-input-label for="password" value="{{ __('New Password') }}" />
             <x-text-input id="password" name="password" type="password" class="mt-1 w-full" />
             @error("password")
                 <x-input-error class="mt-2" :messages="$message" />
@@ -94,6 +94,6 @@
     </form>
 
     <x-slot name="actions">
-        <x-primary-button id="btn-save-info" form="update-user-info">Save</x-primary-button>
+        <x-primary-button id="btn-save-info" form="update-user-info">{{ __('Save') }}</x-primary-button>
     </x-slot>
 </x-card>

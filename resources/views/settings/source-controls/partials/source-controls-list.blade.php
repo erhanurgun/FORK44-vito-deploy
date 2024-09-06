@@ -1,7 +1,7 @@
 <div>
     <x-card-header>
-        <x-slot name="title">Source Controls</x-slot>
-        <x-slot name="description">You can connect your source controls via API Tokens</x-slot>
+        <x-slot name="title">{{ __("Source Controls") }}</x-slot>
+        <x-slot name="description">{{ __('You can connect your source controls via API Tokens') }}</x-slot>
         <x-slot name="aside">
             @include("settings.source-controls.partials.connect")
         </x-slot>
@@ -17,7 +17,7 @@
                         <div class="mb-1 flex items-center">
                             {{ $sourceControl->profile }}
                             @if (! $sourceControl->project_id)
-                                <x-status status="disabled" class="ml-2">GLOBAL</x-status>
+                                <x-status status="disabled" class="ml-2">{{ __('GLOBAL') }}</x-status>
                             @endif
                         </div>
                         <span class="text-sm text-gray-400">

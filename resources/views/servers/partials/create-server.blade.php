@@ -57,7 +57,7 @@
                 @include("servers.partials.public-key")
             @else
                 <div>
-                    <x-input-label for="server_provider" value="Provider Profile" />
+                    <x-input-label for="server_provider" value="{{ __('Provider Profile') }}" />
                     <div class="mt-1 flex items-center">
                         <x-select-input id="server_provider" name="server_provider" class="w-full">
                             <option value="" disabled selected>
@@ -104,7 +104,7 @@
             @if ($provider !== "custom")
                 <div class="grid grid-cols-1 gap-3 lg:grid-cols-2">
                     <div>
-                        <x-input-label for="plan" value="Plan" />
+                        <x-input-label for="plan" value="{{ __('Plan') }}" />
                         <x-select-input id="plan" name="plan" class="mt-1 w-full">
                             <option value="" disabled selected>
                                 {{ __("Select") }}
@@ -123,7 +123,7 @@
                         @enderror
                     </div>
                     <div>
-                        <x-input-label for="region" value="Region" />
+                        <x-input-label for="region" value="{{ __('Region') }}" />
                         <x-select-input id="region" name="region" class="mt-1 w-full">
                             <option value="" disabled selected>
                                 {{ __("Select") }}
@@ -178,7 +178,7 @@
             @endif
 
             <div>
-                <x-input-label for="os" value="Operating System" />
+                <x-input-label for="os" value="{{ __('Operating System') }}" />
                 <x-select-input id="os" name="os" class="mt-1 w-full">
                     @foreach (config("core.operating_systems") as $operatingSystem)
                         <option
@@ -196,7 +196,7 @@
             </div>
 
             <div>
-                <x-input-label for="type" value="Server Type" />
+                <x-input-label for="type" value="{{ __('Server Type') }}" />
                 <x-select-input x-model="type" id="type" name="type" class="mt-1 w-full">
                     @foreach (config("core.server_types") as $serverType)
                         <option value="{{ $serverType }}" @if($serverType == old('type')) selected @endif>
@@ -211,7 +211,7 @@
 
             <div class="grid grid-cols-1 gap-3 lg:grid-cols-3">
                 <div x-show="['{{ ServerType::REGULAR }}'].includes(type)">
-                    <x-input-label for="webserver" value="Webserver" />
+                    <x-input-label for="webserver" value="{{ __('Webserver') }}" />
                     <x-select-input id="webserver" name="webserver" class="mt-1 w-full">
                         @foreach (config("core.webservers") as $ws)
                             <option value="{{ $ws }}" @if($ws == old('webserver', Webserver::NGINX)) selected @endif>
@@ -224,7 +224,7 @@
                     @enderror
                 </div>
                 <div x-show="['{{ ServerType::REGULAR }}', '{{ ServerType::DATABASE }}'].includes(type)">
-                    <x-input-label for="database" value="Database" />
+                    <x-input-label for="database" value="{{ __('Database') }}" />
                     <x-select-input id="database" name="database" class="mt-1 w-full">
                         @foreach (config("core.databases") as $db)
                             <option value="{{ $db }}" @if($db == old('database', Database::NONE)) selected @endif>
@@ -237,9 +237,9 @@
                     @enderror
                 </div>
                 <div x-show="['{{ ServerType::REGULAR }}'].includes(type)">
-                    <x-input-label for="php" value="PHP" />
+                    <x-input-label for="php" value="{{ __('PHP') }}" />
                     <x-select-input id="php" name="php" class="mt-1 w-full">
-                        <option value="none" @if('none' == old('php', '8.2')) selected @endif>none</option>
+                        <option value="none" @if('none' == old('php', '8.2')) selected @endif>{{ __('none') }}</option>
                         @foreach (config("core.php_versions") as $p)
                             <option value="{{ $p }}" @if($p == old('php', '8.2')) selected @endif>
                                 {{ $p }}

@@ -39,15 +39,15 @@
                     @endforeach
                 </x-select-input>
                 <x-input-help>
-                    Check
+                    {{ __('Check') }}
                     <a
                         href="https://vitodeploy.com/settings/source-controls.html"
                         class="text-primary-500"
                         target="_blank"
                     >
-                        here
+                        {{ __('here') }}
                     </a>
-                    to see what permissions you need
+                    {{ __('to see what permissions you need') }}
                 </x-input-help>
                 @error("provider")
                     <x-input-error class="mt-2" :messages="$message" />
@@ -73,7 +73,7 @@
                     placeholder="e.g. https://gitlab.example.com/"
                 />
                 <x-input-help>
-                    If you run a self-managed gitlab enter the url here, leave empty to use gitlab.com
+                    {{ __('If you run a self-managed gitlab enter the url here, leave empty to use gitlab.com') }}
                 </x-input-help>
                 @error("url")
                     <x-input-error class="mt-2" :messages="$message" />
@@ -98,7 +98,7 @@
                         type="text"
                         class="mt-1 w-full"
                     />
-                    <x-input-help>Your Bitbucket username</x-input-help>
+                    <x-input-help>{{ __('Your Bitbucket username') }}</x-input-help>
                     @error("username")
                         <x-input-error class="mt-2" :messages="$message" />
                     @enderror
@@ -114,16 +114,15 @@
                         class="mt-1 w-full"
                     />
                     <x-input-help>
-                        Create a new
+                        {{ __('Create a new') }}
                         <a
                             class="text-primary-500"
                             href="https://bitbucket.org/account/settings/app-passwords/new"
                             target="_blank"
                         >
-                            App Password
+                            {{ __('App Password') }}
                         </a>
-                        in your Bitbucket account with write and admin access to Workspaces, Projects, Repositories and
-                        Webhooks
+                        {{ __('in your Bitbucket account with write and admin access to Workspaces, Projects, Repositories and Webhooks') }}
                     </x-input-help>
                     @error("password")
                         <x-input-error class="mt-2" :messages="$message" />
@@ -133,7 +132,7 @@
 
             <div class="mt-6">
                 <x-checkbox id="global" name="global" :checked="old('global')" value="1">
-                    Is Global (Accessible in all projects)
+                    {{ __('Is Global (Accessible in all projects)') }}
                 </x-checkbox>
                 @error("global")
                     <x-input-error class="mt-2" :messages="$message" />

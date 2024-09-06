@@ -1,7 +1,9 @@
 <x-container>
     <x-card-header>
-        <x-slot name="title">Scripts</x-slot>
-        <x-slot name="description">Your scripts are here. Create/Edit/Delete and Execute them on your servers.</x-slot>
+        <x-slot name="title">{{ __('Scripts') }}</x-slot>
+        <x-slot name="description">
+            {{ __('Your scripts are here. Create/Edit/Delete and Execute them on your servers.') }}
+        </x-slot>
         <x-slot name="aside">
             @include("scripts.partials.create-script")
         </x-slot>
@@ -12,9 +14,9 @@
             <x-table>
                 <x-thead>
                     <x-tr>
-                        <x-th>ID</x-th>
-                        <x-th>Name</x-th>
-                        <x-th>Last Executed At</x-th>
+                        <x-th>{{ __('ID') }}</x-th>
+                        <x-th>{{ __('Name') }}</x-th>
+                        <x-th>{{ __('Last Executed At') }}</x-th>
                         <x-th></x-th>
                     </x-tr>
                 </x-thead>

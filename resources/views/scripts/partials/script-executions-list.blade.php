@@ -1,7 +1,7 @@
 <x-container>
     <x-card-header>
-        <x-slot name="title">Script Executions</x-slot>
-        <x-slot name="description">Here you can see the list of the latest executions of your script</x-slot>
+        <x-slot name="title">{{ __('Script Executions') }}</x-slot>
+        <x-slot name="description">{{ __('Here you can see the list of the latest executions of your script') }}</x-slot>
     </x-card-header>
 
     <x-live id="script-executions" interval="5s">
@@ -10,8 +10,8 @@
                 <x-table>
                     <x-thead>
                         <x-tr>
-                            <x-th>Date</x-th>
-                            <x-th>Status</x-th>
+                            <x-th>{{ __('Date') }}</x-th>
+                            <x-th>{{ __('Status') }}</x-th>
                             <x-th></x-th>
                         </x-tr>
                     </x-thead>
@@ -44,7 +44,7 @@
             </div>
         @else
             <x-simple-card>
-                <div class="text-center">This script hasn't been executed yet!</div>
+                <div class="text-center">{{ __('This script hasn\'t been executed yet!') }}</div>
             </x-simple-card>
         @endif
         <div class="mt-5">

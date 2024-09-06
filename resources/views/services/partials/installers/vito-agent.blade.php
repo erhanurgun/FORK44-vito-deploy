@@ -25,8 +25,8 @@
 
             <div class="mt-6">
                 <x-alert-warning>
-                    Vito Agent is only works if you are running your Vito instance on a cloud not local! Consider
-                    installing remote-monitor instead.
+                    {{ __('Vito Agent is only works if you are running your Vito instance on a cloud not local!
+                    Consider installing remote-monitor instead.') }}
                 </x-alert-warning>
             </div>
 

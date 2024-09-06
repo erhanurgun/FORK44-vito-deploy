@@ -1,7 +1,7 @@
 <div>
     <x-card-header>
-        <x-slot name="title">Supported Services</x-slot>
-        <x-slot name="description">Here you can find the supported services to install</x-slot>
+        <x-slot name="title">{{ __('Supported Services') }}</x-slot>
+        <x-slot name="description">{{ __('Here you can find the supported services to install') }}</x-slot>
         <x-slot name="aside"></x-slot>
     </x-card-header>
 

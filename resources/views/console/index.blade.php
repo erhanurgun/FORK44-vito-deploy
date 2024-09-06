@@ -53,13 +53,13 @@
         }"
     >
         <x-card-header>
-            <x-slot name="title">Headless Console</x-slot>
+            <x-slot name="title">{{ __('Headless Console') }}</x-slot>
             <x-slot name="description">
-                Here you can run ssh commands on your server and see the result right away.
+                {!! __('Here you can run ssh commands on your server and see the result right away.
                 <br />
                 <b>Note that</b>
-                this is a headless console, it doesn't keep the current path. it will always run from the home path of
-                the selected user.
+                this is a headless console, it doesn\'t keep the current path. it will always run from the home path of
+                the selected user.') !!}
             </x-slot>
         </x-card-header>
 
@@ -77,7 +77,7 @@
                     name="command"
                     x-model="command"
                     type="text"
-                    placeholder="Type your command here..."
+                    placeholder="{{ __('Type your command here...') }}"
                     class="mx-1 flex-grow"
                     autocomplete="off"
                 />
@@ -88,7 +88,7 @@
                     class="mr-1 h-[40px]"
                     x-bind:disabled="!running"
                 >
-                    Stop
+                    {{ __('Stop') }}
                 </x-secondary-button>
                 <x-primary-button
                     type="submit"
@@ -97,7 +97,7 @@
                     class="h-[40px]"
                     x-bind:disabled="running || command === ''"
                 >
-                    Run
+                    {{ __('Run') }}
                 </x-primary-button>
             </form>
         </div>

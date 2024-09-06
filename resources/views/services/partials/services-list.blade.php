@@ -1,7 +1,7 @@
 <div>
     <x-card-header>
-        <x-slot name="title">Installed Services</x-slot>
-        <x-slot name="description">All services that we installed on your server are here</x-slot>
+        <x-slot name="title">{{ __('Installed Services') }}</x-slot>
+        <x-slot name="description">{{ __('All services that we installed on your server are here') }}</x-slot>
         <x-slot name="aside"></x-slot>
     </x-card-header>
 

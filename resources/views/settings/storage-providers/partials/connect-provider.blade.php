@@ -50,7 +50,7 @@
                             <option value="{{ $p }}" @if($provider === $p) selected @endif>
                                 {{ $p }}
                                 @if ($p === "ftp")
-                                    (Beta)
+                                    ({{ __('Beta') }})
                                 @endif
                             </option>
                         @endif
@@ -82,7 +82,7 @@
                         href="https://dropbox.tech/developers/generate-an-access-token-for-your-own-account"
                         target="_blank"
                     >
-                        How to generate?
+                        {{ __('How to generate?') }}
                     </a>
                 </div>
             @endif
@@ -190,16 +190,25 @@
                     <x-input-label for="path" value="Absolute Path" />
                     <x-text-input value="{{ old('path') }}" id="path" name="path" type="text" class="mt-1 w-full" />
                     <x-input-help>
-                        The absolute path on your server that the database exists. like `/home/vito/db-backups`
+                        {{ __('The absolute path on your server that the database exists. like `/home/vito/db-backups`') }}
                     </x-input-help>
                     <x-input-help>
-                        Make sure that the path exists and the `vito` user has permission to write to it.
+                        {{ __('Make sure that the path exists and the `vito` user has permission to write to it.') }}
                     </x-input-help>
                     @error("path")
                         <x-input-error class="mt-2" :messages="$message" />
                     @enderror
                 </div>
             @endif
+
+            <div class="mt-6">
+                <x-checkbox id="global" name="global" :checked="old('global')" value="1">
+                    {{ __('Is Global (Accessible in all projects)') }}
+                </x-checkbox>
+                @error("global")
+                    <x-input-error class="mt-2" :messages="$message" />
+                @enderror
+            </div>
 
             <div class="mt-6 flex justify-end">
                 <x-secondary-button type="button" x-on:click="$dispatch('close')">

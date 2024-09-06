@@ -14,13 +14,13 @@
                         type="button"
                         class="inline-flex items-center rounded-md p-2 text-sm text-gray-500 hover:bg-gray-100 focus:outline-none focus:ring-2 focus:ring-gray-200 dark:text-gray-400 dark:hover:bg-gray-700 dark:focus:ring-gray-600 sm:hidden"
                     >
-                        <span class="sr-only">Open sidebar</span>
+                        <span class="sr-only">{{ __('Open sidebar') }}</span>
                         <x-heroicon name="o-bars-3-center-left" class="h-6 w-6" />
                     </button>
                     <a href="/" class="ms-2 flex flex-none md:me-24">
                         <div class="relative flex items-center justify-start text-3xl font-extrabold">
                             <x-application-logo class="h-9 w-9 rounded-md" />
-                            <span class="ml-1 hidden md:block">Deploy</span>
+                            <span class="ml-1 hidden md:block">{{ __('Deploy') }}</span>
                             <span
                                 class="absolute bottom-0 left-0 right-0 rounded-b-md bg-gray-700/60 text-center text-xs text-white md:relative md:ml-1 md:block md:bg-inherit md:text-inherit"
                             >
@@ -39,7 +39,7 @@
                         @click="$dispatch('open-search')"
                     >
                         <x-heroicon name="o-magnifying-glass" class="h-4 w-4" />
-                        <span class="ml-2 hidden lg:block">Press / to Search</span>
+                        <span class="ml-2 hidden lg:block">{{ __('Press / to Search') }}</span>
                     </div>
                 </div>
             </div>

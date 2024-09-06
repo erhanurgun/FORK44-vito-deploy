@@ -12,7 +12,7 @@
             class="p-6"
         >
             @csrf
-            <h2 class="text-lg font-medium text-gray-900 dark:text-gray-100">Create New User</h2>
+            <h2 class="text-lg font-medium text-gray-900 dark:text-gray-100">{{ __('Create New User') }}</h2>
 
             <div class="mt-6">
                 <x-input-label for="name" value="Name" />
@@ -45,13 +45,13 @@
                         value="{{ \App\Enums\UserRole::USER }}"
                         @if(old('role') === \App\Enums\UserRole::USER) selected @endif
                     >
-                        User
+                        {{ __('User') }}
                     </option>
                     <option
                         value="{{ \App\Enums\UserRole::ADMIN }}"
                         @if(old('role') === \App\Enums\UserRole::ADMIN) selected @endif
                     >
-                        Admin
+                        {{ __('Admin') }}
                     </option>
                 </x-select-input>
                 @error("role")
@@ -60,9 +60,9 @@
             </div>
 
             <div class="mt-6 flex justify-end">
-                <x-secondary-button type="button" x-on:click="$dispatch('close')">Cancel</x-secondary-button>
+                <x-secondary-button type="button" x-on:click="$dispatch('close')">{{ __('Cancel') }}</x-secondary-button>
 
-                <x-primary-button id="btn-create-project" class="ml-3">Create</x-primary-button>
+                <x-primary-button id="btn-create-project" class="ml-3">{{ __('Create') }}</x-primary-button>
             </div>
         </form>
     </x-modal>

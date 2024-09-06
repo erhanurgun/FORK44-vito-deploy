@@ -15,7 +15,7 @@
                 :active="request()->routeIs('servers.sites.show')"
             >
                 <x-heroicon name="o-globe-alt" class="h-5 w-5" />
-                <span class="ml-2 hidden xl:block">Application</span>
+                <span class="ml-2 hidden xl:block">{{ __('Application') }}</span>
             </x-tab-item>
             @if ($site->hasFeature(SiteFeature::SSL))
                 <x-tab-item
@@ -24,7 +24,7 @@
                     :active="request()->routeIs('servers.sites.ssl')"
                 >
                     <x-heroicon name="o-lock-closed" class="h-5 w-5" />
-                    <span class="ml-2 hidden xl:block">SSL</span>
+                    <span class="ml-2 hidden xl:block">{{ __('SSL') }}</span>
                 </x-tab-item>
             @endif
 
@@ -35,7 +35,7 @@
                     :active="request()->routeIs('servers.sites.queues')"
                 >
                     <x-heroicon name="o-queue-list" class="h-5 w-5" />
-                    <span class="ml-2 hidden xl:block">Queues</span>
+                    <span class="ml-2 hidden xl:block">^{{ __('Queues') }}</span>
                 </x-tab-item>
             @endif
 
@@ -45,7 +45,7 @@
                 :active="request()->routeIs('servers.sites.settings')"
             >
                 <x-heroicon name="o-cog-6-tooth" class="h-5 w-5" />
-                <span class="ml-2 hidden xl:block">Settings</span>
+                <span class="ml-2 hidden xl:block">{{ __('Settings') }}</span>
             </x-tab-item>
             <x-tab-item
                 class="mr-1"
@@ -53,7 +53,7 @@
                 :active="request()->routeIs('servers.sites.logs*')"
             >
                 <x-heroicon name="o-square-3-stack-3d" class="h-5 w-5" />
-                <span class="ml-2 hidden xl:block">Logs</span>
+                <span class="ml-2 hidden xl:block">{{ __('Logs') }}</span>
             </x-tab-item>
         </div>
         <div class="md:hidden">
@@ -62,7 +62,7 @@
                     <div
                         class="flex w-full cursor-pointer items-center rounded-md border border-gray-300 bg-gray-50 p-2.5 text-sm text-gray-900 focus:border-primary-500 focus:ring-primary-500 dark:border-gray-600 dark:bg-gray-700 dark:text-white dark:placeholder-gray-400 dark:focus:border-primary-500 dark:focus:ring-primary-500"
                     >
-                        Select
+                        {{ __('Select') }}
                         <button type="button" class="ml-2">
                             <x-heroicon name="o-chevron-down" class="h-4 w-4 text-gray-400" />
                         </button>
@@ -74,7 +74,7 @@
                         :active="request()->routeIs('servers.sites.show')"
                     >
                         <x-heroicon name="o-globe-alt" class="h-5 w-5" />
-                        <span class="ml-2">Application</span>
+                        <span class="ml-2">{{ __('Application') }}</span>
                     </x-dropdown-link>
                     @if ($site->hasFeature(SiteFeature::SSL))
                         <x-dropdown-link
@@ -82,7 +82,7 @@
                             :active="request()->routeIs('servers.sites.ssl')"
                         >
                             <x-heroicon name="o-lock-closed" class="h-5 w-5" />
-                            <span class="ml-2">SSL</span>
+                            <span class="ml-2">{{ __('SSL') }}</span>
                         </x-dropdown-link>
                     @endif
 
@@ -92,7 +92,7 @@
                             :active="request()->routeIs('servers.sites.queues')"
                         >
                             <x-heroicon name="o-queue-list" class="h-5 w-5" />
-                            <span class="ml-2">Queues</span>
+                            <span class="ml-2">{{ __('Queues') }}</span>
                         </x-dropdown-link>
                     @endif
 
@@ -101,14 +101,14 @@
                         :active="request()->routeIs('servers.sites.settings')"
                     >
                         <x-heroicon name="o-cog-6-tooth" class="h-5 w-5" />
-                        <span class="ml-2">Settings</span>
+                        <span class="ml-2">{{ __('Settings') }}</span>
                     </x-dropdown-link>
                     <x-dropdown-link
                         :href="route('servers.sites.logs', ['server' => $site->server, 'site' => $site])"
                         :active="request()->routeIs('servers.sites.logs*')"
                     >
                         <x-heroicon name="o-square-3-stack-3d" class="h-5 w-5" />
-                        <span class="ml-2">Logs</span>
+                        <span class="ml-2">{{ __('Logs') }}</span>
                     </x-dropdown-link>
                 </x-slot>
             </x-dropdown>

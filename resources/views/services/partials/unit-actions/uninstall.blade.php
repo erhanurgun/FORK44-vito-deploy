@@ -17,16 +17,18 @@
         >
             @csrf
             @method("delete")
-            <h2 class="text-lg font-medium text-gray-900 dark:text-gray-100">Confirm</h2>
-            <p>Are you sure that you want to uninstall this service?</p>
+            <h2 class="text-lg font-medium text-gray-900 dark:text-gray-100">{{ __('Confirm') }}</h2>
+            <p>{{ __('Are you sure that you want to uninstall this service?') }}</p>
 
             @error("service")
                 <x-input-error class="mt-2" :messages="$message" />
             @enderror
 
             <div class="mt-6 flex justify-end">
-                <x-secondary-button type="button" x-on:click="$dispatch('close')">Cancel</x-secondary-button>
-                <x-danger-button class="ml-3" hx-disable>Confirm</x-danger-button>
+                <x-secondary-button type="button" x-on:click="$dispatch('close')">
+                    {{ __('Cancel') }}
+                </x-secondary-button>
+                <x-danger-button class="ml-3" hx-disable>{{ __('Confirm') }}</x-danger-button>
             </div>
         </form>
     </x-modal>

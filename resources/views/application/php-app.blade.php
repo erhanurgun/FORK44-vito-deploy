@@ -39,7 +39,7 @@
                             {{ __("Deployment Script") }}
                         </x-dropdown-link>
                         <x-dropdown-link class="cursor-pointer" x-on:click="$dispatch('open-modal', 'update-env')">
-                            {{ __(".env") }}
+                            .env
                         </x-dropdown-link>
                     </x-slot>
                 </x-dropdown>

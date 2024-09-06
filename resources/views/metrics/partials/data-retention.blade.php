@@ -3,7 +3,7 @@
     x-on:click="$dispatch('open-modal', 'metric-settings')"
 >
     <x-heroicon name="o-trash" class="mr-1 h-5 w-5" />
-    Data Retention
+    {{ __("Data Retention") }}
 </x-secondary-button>
 @push("modals")
     <x-modal name="metric-settings">
@@ -16,7 +16,9 @@
         >
             @csrf
 
-            <h2 class="text-lg font-medium text-gray-900 dark:text-gray-100">Data Retention</h2>
+            <h2 class="text-lg font-medium text-gray-900 dark:text-gray-100">
+                {{ __("Data Retention") }}
+            </h2>
 
             <div class="mt-6">
                 <x-input-label for="data_retention" value="Delete metrics older than" />
@@ -26,7 +28,7 @@
                             value="{{ $item }}"
                             @if($server->monitoring()->handler()->data()['data_retention'] == $item) selected @endif
                         >
-                            {{ $item }} Days
+                            {{ $item }} {{ __("Days") }}
                         </option>
                     @endforeach
                 </x-select-input>

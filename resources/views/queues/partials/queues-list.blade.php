@@ -95,7 +95,7 @@
                     @if (session()->has("content"))
                         {{ session("content") }}
                     @else
-                        Loading...
+                        {{ __("Loading...") }}
                     @endif
                 </x-console-view>
             </div>

@@ -9,5 +9,5 @@
     <input type="hidden" name="name" value="redis" />
     <input type="hidden" name="type" value="memory_database" />
     <input type="hidden" name="version" value="latest" />
-    <x-secondary-button class="!w-full" hx-disable>Install</x-secondary-button>
+    <x-secondary-button class="!w-full" hx-disable>{{ __('Install') }}</x-secondary-button>
 </form>

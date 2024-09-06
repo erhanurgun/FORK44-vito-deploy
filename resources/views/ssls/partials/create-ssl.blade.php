@@ -84,7 +84,7 @@
 
             <div class="mt-6">
                 <x-checkbox id="aliases" name="aliases" :checked="old('aliases')" value="1">
-                    Set SSL for site's aliases as well
+                    {{ __('Set SSL for site\'s aliases as well') }}
                 </x-checkbox>
             </div>
 

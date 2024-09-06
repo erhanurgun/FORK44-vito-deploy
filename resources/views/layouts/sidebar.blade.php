@@ -16,7 +16,7 @@
                         :active="request()->routeIs('servers.show')"
                     >
                         <x-heroicon name="o-home" class="h-6 w-6" />
-                        <span class="ml-2">Overview</span>
+                        <span class="ml-2">{{ __('Overview') }}</span>
                     </x-sidebar-link>
                 </li>
                 @if ($server->webserver())
@@ -162,16 +162,23 @@
             @endif
 
             <li>
+                <x-sidebar-link :href="route('servers')" :active="request()->routeIs('servers')">
+                    <x-heroicon name="o-server" class="h-6 w-6" />
+                    <span class="ml-2">{{ __('Servers') }}</span>
+                </x-sidebar-link>
+            </li>
+
+            <li>
                 <x-sidebar-link :href="route('scripts.index')" :active="request()->routeIs('scripts.*')">
                     <x-heroicon name="o-bolt" class="h-6 w-6" />
-                    <span class="ml-2">Scripts</span>
+                    <span class="ml-2">{{ __('Scripts') }}</span>
                 </x-sidebar-link>
             </li>
 
             <li>
                 <x-sidebar-link :href="route('profile')" :active="request()->routeIs('profile')">
                     <x-heroicon name="o-user-circle" class="h-6 w-6" />
-                    <span class="ml-2">Profile</span>
+                    <span class="ml-2">{{ __('Profile') }}</span>
                 </x-sidebar-link>
             </li>
 
@@ -182,7 +189,7 @@
                         :active="request()->routeIs('settings.users*')"
                     >
                         <x-heroicon name="o-user-group" class="h-6 w-6" />
-                        <span class="ml-2">Users</span>
+                        <span class="ml-2">{{ __('Users') }}</span>
                     </x-sidebar-link>
                 </li>
                 <li>
@@ -191,7 +198,7 @@
                         :active="request()->routeIs('settings.projects')"
                     >
                         <x-heroicon name="o-inbox-stack" class="h-6 w-6" />
-                        <span class="ml-2">Projects</span>
+                        <span class="ml-2">{{ __('Projects') }}</span>
                     </x-sidebar-link>
                 </li>
                 <li>
@@ -200,7 +207,7 @@
                         :active="request()->routeIs('settings.server-providers')"
                     >
                         <x-heroicon name="o-server-stack" class="h-6 w-6" />
-                        <span class="ml-2">Server Providers</span>
+                        <span class="ml-2">{{ __('Server Providers') }}</span>
                     </x-sidebar-link>
                 </li>
                 <li>
@@ -209,7 +216,7 @@
                         :active="request()->routeIs('settings.source-controls')"
                     >
                         <x-heroicon name="o-code-bracket" class="h-6 w-6" />
-                        <span class="ml-2">Source Controls</span>
+                        <span class="ml-2">{{ __('Source Controls') }}</span>
                     </x-sidebar-link>
                 </li>
                 <li>
@@ -218,7 +225,7 @@
                         :active="request()->routeIs('settings.storage-providers')"
                     >
                         <x-heroicon name="o-circle-stack" class="h-6 w-6" />
-                        <span class="ml-2">Storage Providers</span>
+                        <span class="ml-2">{{ __('Storage Providers') }}</span>
                     </x-sidebar-link>
                 </li>
                 <li>
@@ -227,7 +234,7 @@
                         :active="request()->routeIs('settings.notification-channels')"
                     >
                         <x-heroicon name="o-bell" class="h-6 w-6" />
-                        <span class="ml-2">Notification Channels</span>
+                        <span class="ml-2">{{ __('Notification Channels') }}</span>
                     </x-sidebar-link>
                 </li>
                 <li>
@@ -236,7 +243,13 @@
                         :active="request()->routeIs('settings.ssh-keys')"
                     >
                         <x-heroicon name="o-key" class="h-6 w-6" />
-                        <span class="ml-2">SSH Keys</span>
+                        <span class="ml-2">{{ __('SSH Keys') }}</span>
+                    </x-sidebar-link>
+                </li>
+                <li>
+                    <x-sidebar-link :href="route('settings.tags')" :active="request()->routeIs('settings.tags')">
+                        <x-heroicon name="o-tag" class="h-6 w-6" />
+                        <span class="ml-2">{{ __('Tags') }}</span>
                     </x-sidebar-link>
                 </li>
             @endif

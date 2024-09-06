@@ -24,7 +24,7 @@
                 <a href="/">
                     <div class="flex items-center justify-start text-3xl font-extrabold">
                         <x-application-logo class="h-9 w-9 rounded-md" />
-                        <span class="ml-1">Deploy</span>
+                        <span class="ml-1">{{ __('Deploy') }}</span>
                     </div>
                 </a>
             </div>

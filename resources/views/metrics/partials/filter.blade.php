@@ -14,24 +14,24 @@
         </x-slot>
         <x-slot name="content">
             <x-dropdown-link :href="route('servers.metrics', ['server' => $server, 'period' => '10m'])">
-                10 Minutes
+                10 {{ __("Minutes") }}
             </x-dropdown-link>
             <x-dropdown-link :href="route('servers.metrics', ['server' => $server, 'period' => '30m'])">
-                30 Minutes
+                30 {{ __("Minutes") }}
             </x-dropdown-link>
             <x-dropdown-link :href="route('servers.metrics', ['server' => $server, 'period' => '1h'])">
-                1 Hour
+                1 {{ __("Hour") }}
             </x-dropdown-link>
             <x-dropdown-link :href="route('servers.metrics', ['server' => $server, 'period' => '12h'])">
-                12 Hours
+                12 {{ __("Hours") }}
             </x-dropdown-link>
             <x-dropdown-link :href="route('servers.metrics', ['server' => $server, 'period' => '1d'])">
-                1 Day
+                1 {{ __("Day") }}
             </x-dropdown-link>
             <x-dropdown-link :href="route('servers.metrics', ['server' => $server, 'period' => '7d'])">
-                7 Days
+                7 {{ __("Days") }}
             </x-dropdown-link>
-            <x-dropdown-link x-on:click="period = 'custom'" class="cursor-pointer">Custom</x-dropdown-link>
+            <x-dropdown-link x-on:click="period = 'custom'" class="cursor-pointer">{{ __('Custom') }}</x-dropdown-link>
         </x-slot>
     </x-dropdown>
 
@@ -55,7 +55,7 @@
                     autocomplete="off"
                 />
             </div>
-            <span class="mx-2 text-gray-500">to</span>
+            <span class="mx-2 text-gray-500">{{ __('to') }}</span>
             <div class="relative">
                 <div class="pointer-events-none absolute inset-y-0 start-0 flex items-center ps-3">
                     <x-heroicon name="o-calendar" class="h-4 w-4 text-gray-500 dark:text-gray-400" />

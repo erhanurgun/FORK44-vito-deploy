@@ -1,10 +1,10 @@
 <x-settings-layout>
-    <x-slot name="pageTitle">Users</x-slot>
+    <x-slot name="pageTitle">{{ __("Users") }}</x-slot>
 
     <x-container>
         <x-card-header>
-            <x-slot name="title">Users</x-slot>
-            <x-slot name="description">Here you can manage users</x-slot>
+            <x-slot name="title">{{ __('Users') }}</x-slot>
+            <x-slot name="description">{{ __('Here you can manage users') }}</x-slot>
             <x-slot name="aside">
                 @include("settings.users.partials.create-user")
             </x-slot>
@@ -13,10 +13,10 @@
             <x-table>
                 <x-thead>
                     <x-tr>
-                        <x-th>ID</x-th>
-                        <x-th>Name</x-th>
-                        <x-th>Email</x-th>
-                        <x-th>Role</x-th>
+                        <x-th>{{ __('ID') }}</x-th>
+                        <x-th>{{ __('Name') }}</x-th>
+                        <x-th>{{ __('Email') }}</x-th>
+                        <x-th>{{ __('Role') }}</x-th>
                         <x-th></x-th>
                     </x-tr>
                 </x-thead>
@@ -29,9 +29,9 @@
                             <x-td>
                                 <div class="inline-flex">
                                     @if ($user->role === \App\Enums\UserRole::ADMIN)
-                                        <x-status status="success">ADMIN</x-status>
+                                        <x-status status="success">{{ __('ADMIN') }}</x-status>
                                     @else
-                                        <x-status status="info">USER</x-status>
+                                        <x-status status="info">{{ __('USER') }}</x-status>
                                     @endif
                                 </div>
                             </x-td>

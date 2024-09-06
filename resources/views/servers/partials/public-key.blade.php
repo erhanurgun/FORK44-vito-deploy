@@ -7,9 +7,9 @@
         <div
             class="rounded-sm border-l-4 border-yellow-500 bg-yellow-100 px-4 py-3 text-yellow-700 dark:bg-yellow-500 dark:bg-opacity-10 dark:text-yellow-500"
         >
-            Your server needs to have a new unused installation of supported operating systems and must have a root
+            {{ __('Your server needs to have a new unused installation of supported operating systems and must have a root
             user. To get started, add our public key to /root/.ssh/authorized_keys file by running the bellow command on
-            your server as root.
+            your server as root.') }}
         </div>
     </div>
 </div>

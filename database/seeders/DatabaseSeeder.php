@@ -8,18 +8,28 @@ use App\Models\Server;
 use App\Models\Site;
 use App\Models\User;
 use Illuminate\Database\Seeder;
+use Illuminate\Foundation\Testing\WithFaker;
 
 class DatabaseSeeder extends Seeder
 {
+    use WithFaker;
+
     /**
      * Seed the application's database.
      */
     public function run(): void
     {
         $user = User::factory()->create([
-            'name' => 'Test User',
-            'email' => 'user@example.com',
+            'name' => 'erhanurgun',
+            'email' => 'erho.dev@gmail.com',
+            'password' => bcrypt('071109014'),
         ]);
+
+        $this->createResources($user);
+    }
+
+    private function createResources(User $user): void
+    {
         $server = Server::factory()->create([
             'user_id' => $user->id,
             'project_id' => $user->currentProject->id,

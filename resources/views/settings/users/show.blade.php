@@ -1,5 +1,5 @@
 <x-settings-layout>
-    <x-slot name="pageTitle">Users</x-slot>
+    <x-slot name="pageTitle">{{ __('Users') }}</x-slot>
 
     <x-container>
         @include("settings.users.partials.update-projects")
