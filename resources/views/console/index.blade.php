@@ -68,7 +68,7 @@
                 <div class="w-full" x-text="output"></div>
             </x-console-view>
             <form onsubmit="return false" id="console-form" class="flex items-center justify-between">
-                <x-select-input x-model="user" id="user" name="user" class="flex-none" data-tooltip="User">
+                <x-select-input x-model="user" id="user" name="user" class="flex-none" data-tooltip="{{ __('User') }}">
                     <option value="{{ $server->ssh_user }}">{{ $server->ssh_user }}</option>
                     <option value="root">root</option>
                 </x-select-input>

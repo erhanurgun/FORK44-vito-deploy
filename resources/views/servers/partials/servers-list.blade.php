@@ -94,13 +94,13 @@
                                         <div class="flex items-center justify-end">
                                             <x-icon-button
                                                     :href="route('servers.show', ['server' => $server])"
-                                                    data-tooltip="Show Server"
+                                                    data-tooltip="{{ __('Show Server') }}"
                                             >
                                                 <x-heroicon name="o-eye" class="h-5 w-5" />
                                             </x-icon-button>
                                             <x-icon-button
                                                     :href="route('servers.settings', ['server' => $server])"
-                                                    data-tooltip="Settings"
+                                                    data-tooltip="{{ __('Settings') }}"
                                             >
                                                 <x-heroicon name="o-wrench-screwdriver" class="h-5 w-5" />
                                             </x-icon-button>

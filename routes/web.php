@@ -1,5 +1,6 @@
 <?php
 
+use App\Http\Controllers\LanguageController;
 use App\Http\Controllers\ProfileController;
 use App\Http\Controllers\ScriptController;
 use App\Http\Controllers\SearchController;
@@ -12,6 +13,9 @@ Route::get('/', function () {
 });
 
 Route::middleware('auth')->group(function () {
+    // switch language
+    Route::get('lang/{lang}', LanguageController::class)->name('lang');
+
     // profile
     Route::prefix('profile')->group(function () {
         Route::get('/', [ProfileController::class, 'index'])->name('profile');

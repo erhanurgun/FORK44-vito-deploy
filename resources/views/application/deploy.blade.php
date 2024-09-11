@@ -10,7 +10,7 @@
             hx-swap="outerHTML"
             hx-select="#deploy"
         @else
-            data-tooltip="Click the Manage button to add a deployment script first"
+            data-tooltip="{{ __('Click the Manage button to add a deployment script first') }}"
         @endif
     >
         <x-primary-button

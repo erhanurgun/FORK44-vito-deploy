@@ -69,11 +69,11 @@
                                 @endif
                             </x-td>
                             <x-td class="text-right">
-                                <x-icon-button :href="route('scripts.show', $script)" data-tooltip="Executions">
+                                <x-icon-button :href="route('scripts.show', $script)" data-tooltip="{{ __('Executions') }}">
                                     <x-heroicon name="o-eye" class="h-5 w-5" />
                                 </x-icon-button>
                                 <x-icon-button
-                                        data-tooltip="Execute"
+                                        data-tooltip="{{ __('Execute') }}"
                                         id="execute-{{ $script->id }}"
                                         hx-get="{{ route('scripts.index', ['execute' => $script->id]) }}"
                                         hx-replace-url="true"
@@ -85,7 +85,7 @@
                                     <x-heroicon name="o-bolt" class="h-5 w-5 text-primary-500" />
                                 </x-icon-button>
                                 <x-icon-button
-                                        data-tooltip="Edit"
+                                        data-tooltip="{{ __('Edit') }}"
                                         id="edit-{{ $script->id }}"
                                         hx-get="{{ route('scripts.index', ['edit' => $script->id]) }}"
                                         hx-replace-url="true"
@@ -97,7 +97,7 @@
                                     <x-heroicon name="o-pencil" class="h-5 w-5" />
                                 </x-icon-button>
                                 <x-icon-button
-                                        data-tooltip="Delete"
+                                        data-tooltip="{{ __('Delete') }}"
                                         x-on:click="deleteAction = '{{ route('scripts.delete', $script->id) }}'; $dispatch('open-modal', 'delete-script')"
                                 >
                                     <x-heroicon name="o-trash" class="h-5 w-5" />

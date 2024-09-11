@@ -158,6 +158,10 @@ class User extends Authenticatable
         $sort = $request->query('sort', 'name');
         $direction = $request->query('direction', 'asc');
 
+        if (! in_array($direction, ['asc', 'desc'])) {
+            $direction = 'asc';
+        }
+
         $query->orderBy($sort, $direction);
     }
 }

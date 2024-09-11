@@ -1,7 +1,7 @@
 <div class="cursor-pointer">
     <x-dropdown align="left">
         <x-slot:trigger>
-            <div data-tooltip="Project">
+            <div data-tooltip="{{ __('Project') }}">
                 <div
                     class="flex h-10 w-max items-center rounded-md border border-gray-200 bg-gray-100 px-4 py-2 pr-7 text-sm text-gray-900 focus:ring-4 focus:ring-gray-300 dark:border-gray-700 dark:bg-gray-800 dark:text-gray-300 dark:focus:ring-gray-600"
                 >

@@ -69,6 +69,10 @@ class Script extends AbstractModel
         $sort = $request->query('sort', 'name');
         $direction = $request->query('direction', 'asc');
 
+        if (! in_array($direction, ['asc', 'desc'])) {
+            $direction = 'asc';
+        }
+
         $query->orderBy($sort, $direction);
     }
 }

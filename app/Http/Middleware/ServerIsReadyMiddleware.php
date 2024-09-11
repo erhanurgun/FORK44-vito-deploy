@@ -16,7 +16,7 @@ class ServerIsReadyMiddleware
         $server = $request->route('server');
 
         if ($server->status !== ServerStatus::READY) {
-            Toast::error('Server is not ready yet');
+            Toast::error(__('Server is not ready yet!'));
 
             return redirect()->route('servers.show', ['server' => $server]);
         }

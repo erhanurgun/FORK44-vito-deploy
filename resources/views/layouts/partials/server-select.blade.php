@@ -1,5 +1,5 @@
 @if (auth()->user()->currentProject &&auth()->user()->can("view", auth()->user()->currentProject))
-    <div data-tooltip="Servers" class="cursor-pointer">
+    <div data-tooltip="{{ __('Servers') }}" class="cursor-pointer">
         <x-dropdown width="full">
             <x-slot:trigger>
                 <div>

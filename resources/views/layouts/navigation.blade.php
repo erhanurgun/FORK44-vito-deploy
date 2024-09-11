@@ -45,6 +45,10 @@
             </div>
             <div class="flex items-center px-3 py-3">
                 <div class="mr-3">
+                    @include("layouts.partials.language-select")
+                </div>
+
+                <div class="mr-3">
                     @include("layouts.partials.color-scheme")
                 </div>
 

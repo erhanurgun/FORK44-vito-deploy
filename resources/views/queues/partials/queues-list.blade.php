@@ -27,7 +27,7 @@
                                     hx-post="{{ route('servers.sites.queues.action', ['server' => $server, 'site' => $site, 'queue' => $queue, 'action' => 'stop']) }}"
                                     hx-swap="outerHTML"
                                     hx-select="#queue-actions-{{ $queue->id }}"
-                                    data-tooltip="Stop"
+                                    data-tooltip="{{ __('Stop') }}"
                                 >
                                     <x-heroicon name="o-stop" class="h-5 w-5" />
                                 </x-icon-button>
@@ -36,7 +36,7 @@
                                     hx-post="{{ route('servers.sites.queues.action', ['server' => $server, 'site' => $site, 'queue' => $queue, 'action' => 'start']) }}"
                                     hx-swap="outerHTML"
                                     hx-select="#queue-actions-{{ $queue->id }}"
-                                    data-tooltip="Start"
+                                    data-tooltip="{{ __('Start') }}"
                                 >
                                     <x-heroicon name="o-play" class="h-5 w-5" />
                                 </x-icon-button>
@@ -45,7 +45,7 @@
                                     hx-post="{{ route('servers.sites.queues.action', ['server' => $server, 'site' => $site, 'queue' => $queue, 'action' => 'restart']) }}"
                                     hx-swap="outerHTML"
                                     hx-select="#queue-actions-{{ $queue->id }}"
-                                    data-tooltip="Restart"
+                                    data-tooltip="{{ __('Restart') }}"
                                 >
                                     <x-heroicon name="o-arrow-path" class="h-5 w-5" />
                                 </x-icon-button>
@@ -55,13 +55,13 @@
                                     hx-get="{{ route('servers.sites.queues.logs', ['server' => $server, 'site' => $site, 'queue' => $queue]) }}"
                                     hx-target="#log-content"
                                     hx-select="#log-content"
-                                    data-tooltip="Logs"
+                                    data-tooltip="{{ __('Logs') }}"
                                 >
                                     <x-heroicon name="o-square-3-stack-3d" class="h-5 w-5" />
                                 </x-icon-button>
                                 <x-icon-button
                                     x-on:click="deleteAction = '{{ route('servers.sites.queues.destroy', ['server' => $server, 'site' => $site, 'queue' => $queue]) }}'; $dispatch('open-modal', 'delete-queue')"
-                                    data-tooltip="Delete"
+                                    data-tooltip="{{ __('Delete') }}"
                                 >
                                     <x-heroicon name="o-trash" class="h-5 w-5" />
                                 </x-icon-button>

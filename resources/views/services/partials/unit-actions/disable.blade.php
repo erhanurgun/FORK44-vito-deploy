@@ -1,6 +1,6 @@
 <x-icon-button
     :disabled="isset($disabled) ? $disabled : false"
-    data-tooltip="Disable Service"
+    data-tooltip="{{ __('Disable Service') }}"
     class="cursor-pointer"
     href="{{ route('servers.services.disable', ['server' => $server, 'service' => $service]) }}"
 >

@@ -32,7 +32,7 @@
                                         hx-target="#show-log-content"
                                         hx-select="#show-log-content"
                                         hx-swap="outerHTML"
-                                        data-tooltip="Logs"
+                                        data-tooltip="{{ __('Logs') }}"
                                     >
                                         <x-heroicon name="o-eye" class="h-5 w-5" />
                                     </x-icon-button>

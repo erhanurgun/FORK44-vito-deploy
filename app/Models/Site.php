@@ -308,6 +308,10 @@ class Site extends AbstractModel
         $sort = $request->query('sort', 'domain');
         $direction = $request->query('direction', 'asc');
 
+        if (! in_array($direction, ['asc', 'desc'])) {
+            $direction = 'asc';
+        }
+
         $query->orderBy($sort, $direction);
     }
 }

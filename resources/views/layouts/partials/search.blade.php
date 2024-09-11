@@ -179,12 +179,12 @@
                                 <span
                                     class="mr-1 rounded-xl bg-gray-100 px-2 text-gray-500 dark:bg-gray-700 dark:text-gray-400"
                                     x-text="item.project"
-                                    data-tooltip="Project"
+                                    data-tooltip="{{ __('Project') }}"
                                 ></span>
                                 <span
                                     class="rounded-xl bg-primary-100 px-2 text-primary-500 dark:bg-primary-500 dark:bg-opacity-10"
                                     x-text="item.type"
-                                    data-tooltip="Type"
+                                    data-tooltip="{{ __('Type') }}"
                                 ></span>
                             </div>
                         </button>

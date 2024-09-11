@@ -27,7 +27,7 @@
                                 @if ($cronjob->status == \App\Enums\CronjobStatus::READY)
                                     <x-icon-button
                                         id="disable-cronjob-{{ $cronjob->id }}"
-                                        data-tooltip="Disable Cronjob"
+                                        data-tooltip="{{ __('Disable Cronjob') }}"
                                         hx-post="{{ route('servers.cronjobs.disable', ['server' => $server, 'cronJob' => $cronjob]) }}"
                                         hx-target="#cronjob-{{ $cronjob->id }}"
                                         hx-select="#cronjob-{{ $cronjob->id }}"
@@ -42,7 +42,7 @@
                                 @if ($cronjob->status == \App\Enums\CronjobStatus::DISABLED)
                                     <x-icon-button
                                         id="enable-cronjob-{{ $cronjob->id }}"
-                                        data-tooltip="Enable Cronjob"
+                                        data-tooltip="{{ __('Enable Cronjob') }}"
                                         hx-post="{{ route('servers.cronjobs.enable', ['server' => $server, 'cronJob' => $cronjob]) }}"
                                         hx-target="#cronjob-{{ $cronjob->id }}"
                                         hx-select="#cronjob-{{ $cronjob->id }}"
@@ -55,7 +55,7 @@
                                 @endif
 
                                 <x-icon-button
-                                    data-tooltip="Delete Cronjob"
+                                    data-tooltip="{{ __('Delete Cronjob') }}"
                                     x-on:click="deleteAction = '{{ route('servers.cronjobs.destroy', ['server' => $server, 'cronJob' => $cronjob]) }}'; $dispatch('open-modal', 'delete-cronjob')"
                                 >
                                     <x-heroicon name="o-trash" class="h-5 w-5" />
