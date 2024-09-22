@@ -22,7 +22,13 @@ class ServerController extends Controller
 
         $this->authorize('viewAny', [Server::class, $user->currentProject]);
 
-        $servers = $user->currentProject->servers()->sort(request())->orderByDesc('created_at')->get();
+        $servers = $user
+            ->currentProject
+            ->servers()
+            ->sort(request())
+            ->orderBy('name')
+            // ->get();
+            ->paginate(10);
 
         return view('servers.index', compact('servers'));
     }

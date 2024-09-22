@@ -26,12 +26,12 @@
                     <x-slot name="content">
                         @foreach ($sortOptions as $sortKey => $sortLabel)
                             <x-dropdown-link
-                                :href="route('servers.sites', [
+                                    :href="route('servers.sites', [
                                     'server' => $server,
                                     'sort' => $sortKey,
                                     'direction' => $currentDirection
                                 ])"
-                                :active="request()->query('sort') === $sortKey"
+                                    :active="request()->query('sort') === $sortKey"
                             >
                                 {{ $sortLabel }}
                             </x-dropdown-link>
@@ -107,6 +107,10 @@
                         @endforeach
                     </x-tbody>
                 </x-table>
+
+                <div class="mt-4">
+                    {{ $sites->withQueryString()->links() }}
+                </div>
             </div>
         @else
             <x-simple-card>

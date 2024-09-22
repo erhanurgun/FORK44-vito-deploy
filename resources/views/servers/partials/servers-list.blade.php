@@ -110,6 +110,10 @@
                             @endforeach
                         </x-tbody>
                     </x-table>
+
+                    <div class="mt-4">
+                        {{ $servers->withQueryString()->links() }}
+                    </div>
                 </div>
             @else
                 <x-simple-card>
